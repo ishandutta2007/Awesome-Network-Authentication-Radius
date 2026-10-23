@@ -1,6 +1,6 @@
 # Awesome-Network-Authentication-Radius
 
-# Top Network Authentication & RADIUS Tools Ecosystem
+## Top Network Authentication & RADIUS Tools Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on 802.1X/EAP, NAC Policy Enforcement & Self-Hosted AAA*  
