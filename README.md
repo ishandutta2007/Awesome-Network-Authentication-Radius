@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
   <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square&logo=github" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square&logo=github" alt="GitHub_Stars"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square&logo=github" alt="GitHub Forks"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square" alt="License"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/issues"><img src="https://img.shields.io/github/issues/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square" alt="Open Issues"/></a>
@@ -68,11 +68,11 @@ The following SaaS and commercial enterprise platforms provide hosted or hybrid 
 
 These open-source projects provide production-ready RADIUS daemons, TACACS+ access controllers, web administration interfaces, and protocol libraries. 
 
-Entries are **sorted descending by GitHub star count** ⭐.
+Entries are **sorted descending by GitHub Stars_Count** ⭐.
 
 ---
 
-### 1. [FreeRADIUS](https://github.com/FreeRADIUS/freeradius-server) [![GitHub stars](https://img.shields.io/github/stars/FreeRADIUS/freeradius-server?style=social&color=white)](https://github.com/FreeRADIUS/freeradius-server/stargazers)
+### 1. [FreeRADIUS](https://github.com/FreeRADIUS/freeradius-server) [![GitHub_Stars](https://img.shields.io/github/stars/FreeRADIUS/freeradius-server?style=social&color=white)](https://github.com/FreeRADIUS/freeradius-server/stargazers)
 - **Repository**: [`FreeRADIUS/freeradius-server`](https://github.com/FreeRADIUS/freeradius-server)
 - **Primary Language**: C | **License**: GPL-2.0
 - **Overview**: The undisputed reference implementation of RADIUS and the most widely deployed AAA server on Earth. Authenticates approximately one-third of all global internet traffic, forms the core backbone of the **eduroam** global roaming network, and scales to tens of millions of concurrent subscribers in national tier-1 telecom and ISP architectures.
@@ -84,7 +84,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 2. [PacketFence](https://github.com/inverse-inc/packetfence) [![GitHub stars](https://img.shields.io/github/stars/inverse-inc/packetfence?style=social&color=white)](https://github.com/inverse-inc/packetfence/stargazers)
+### 2. [PacketFence](https://github.com/inverse-inc/packetfence) [![GitHub_Stars](https://img.shields.io/github/stars/inverse-inc/packetfence?style=social&color=white)](https://github.com/inverse-inc/packetfence/stargazers)
 - **Repository**: [`inverse-inc/packetfence`](https://github.com/inverse-inc/packetfence)
 - **Primary Language**: Perl / JavaScript | **License**: GPL-2.0
 - **Overview**: Enterprise-grade Free and Open Source Network Access Control (NAC) system trusted worldwide. Delivers comprehensive network security enforcement for heterogeneous wired and wireless multivendor infrastructure.
@@ -96,7 +96,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 3. [daloRADIUS](https://github.com/lirantal/daloradius) [![GitHub stars](https://img.shields.io/github/stars/lirantal/daloradius?style=social&color=white)](https://github.com/lirantal/daloradius/stargazers)
+### 3. [daloRADIUS](https://github.com/lirantal/daloradius) [![GitHub_Stars](https://img.shields.io/github/stars/lirantal/daloradius?style=social&color=white)](https://github.com/lirantal/daloradius/stargazers)
 - **Repository**: [`lirantal/daloradius`](https://github.com/lirantal/daloradius)
 - **Primary Language**: PHP / JavaScript | **License**: GPL-2.0
 - **Overview**: Popular web administration platform designed specifically for managing FreeRADIUS instances, internet service provider deployments, and Wi-Fi hotspot operators.
@@ -108,7 +108,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 4. [ToughRADIUS](https://github.com/talkincode/toughradius) [![GitHub stars](https://img.shields.io/github/stars/talkincode/toughradius?style=social&color=white)](https://github.com/talkincode/toughradius/stargazers)
+### 4. [ToughRADIUS](https://github.com/talkincode/toughradius) [![GitHub_Stars](https://img.shields.io/github/stars/talkincode/toughradius?style=social&color=white)](https://github.com/talkincode/toughradius/stargazers)
 - **Repository**: [`talkincode/toughradius`](https://github.com/talkincode/toughradius)
 - **Primary Language**: Go / TypeScript | **License**: Apache-2.0
 - **Overview**: High-performance, modern RADIUS server engineered in Golang for ISPs, enterprise intranets, and carriers. Features a built-in React Admin web management console and native Docker deployment.
@@ -120,7 +120,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 5. [OpenWISP RADIUS](https://github.com/openwisp/openwisp-radius) [![GitHub stars](https://img.shields.io/github/stars/openwisp/openwisp-radius?style=social&color=white)](https://github.com/openwisp/openwisp-radius/stargazers)
+### 5. [OpenWISP RADIUS](https://github.com/openwisp/openwisp-radius) [![GitHub_Stars](https://img.shields.io/github/stars/openwisp/openwisp-radius?style=social&color=white)](https://github.com/openwisp/openwisp-radius/stargazers)
 - **Repository**: [`openwisp/openwisp-radius`](https://github.com/openwisp/openwisp-radius)
 - **Primary Language**: Python | **License**: GPL-3.0
 - **Overview**: Modular Django application providing a centralized administration web UI and RESTful API for FreeRADIUS 3. Designed for public Wi-Fi networks, university campuses, and municipal hotspot networks.
@@ -132,7 +132,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 6. [pyrad](https://github.com/pyradius/pyrad) [![GitHub stars](https://img.shields.io/github/stars/pyradius/pyrad?style=social&color=white)](https://github.com/pyradius/pyrad/stargazers)
+### 6. [pyrad](https://github.com/pyradius/pyrad) [![GitHub_Stars](https://img.shields.io/github/stars/pyradius/pyrad?style=social&color=white)](https://github.com/pyradius/pyrad/stargazers)
 - **Repository**: [`pyradius/pyrad`](https://github.com/pyradius/pyrad)
 - **Primary Language**: Python | **License**: BSD-3-Clause
 - **Overview**: The standard Python library implementing RADIUS client and server capabilities in pure Python (RFC 2865 and RFC 2866). Widely used for automated testing, custom proxy daemons, and microservices.
@@ -144,7 +144,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 7. [Keycloak RADIUS Plugin](https://github.com/vzakharchenko/keycloak-radius-plugin) [![GitHub stars](https://img.shields.io/github/stars/vzakharchenko/keycloak-radius-plugin?style=social&color=white)](https://github.com/vzakharchenko/keycloak-radius-plugin/stargazers)
+### 7. [Keycloak RADIUS Plugin](https://github.com/vzakharchenko/keycloak-radius-plugin) [![GitHub_Stars](https://img.shields.io/github/stars/vzakharchenko/keycloak-radius-plugin?style=social&color=white)](https://github.com/vzakharchenko/keycloak-radius-plugin/stargazers)
 - **Repository**: [`vzakharchenko/keycloak-radius-plugin`](https://github.com/vzakharchenko/keycloak-radius-plugin)
 - **Primary Language**: Java | **License**: Apache-2.0
 - **Overview**: Seamlessly embeds a native RADIUS server inside Red Hat Keycloak, allowing network access devices (firewalls, VPN gateways, Wi-Fi controllers) to authenticate against Keycloak's IAM core.
@@ -156,7 +156,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 8. [tac_plus](https://github.com/facebook/tac_plus) [![GitHub stars](https://img.shields.io/github/stars/facebook/tac_plus?style=social&color=white)](https://github.com/facebook/tac_plus/stargazers)
+### 8. [tac_plus](https://github.com/facebook/tac_plus) [![GitHub_Stars](https://img.shields.io/github/stars/facebook/tac_plus?style=social&color=white)](https://github.com/facebook/tac_plus/stargazers)
 - **Repository**: [`facebook/tac_plus`](https://github.com/facebook/tac_plus)
 - **Primary Language**: C | **License**: BSD-3-Clause
 - **Overview**: Facebook / Meta's hardened TACACS+ daemon designed for enterprise network device administration, automated configuration auditing, and command-level authorization.
@@ -168,7 +168,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 9. [Tacquito](https://github.com/facebookincubator/tacquito) [![GitHub stars](https://img.shields.io/github/stars/facebookincubator/tacquito?style=social&color=white)](https://github.com/facebookincubator/tacquito/stargazers)
+### 9. [Tacquito](https://github.com/facebookincubator/tacquito) [![GitHub_Stars](https://img.shields.io/github/stars/facebookincubator/tacquito?style=social&color=white)](https://github.com/facebookincubator/tacquito/stargazers)
 - **Repository**: [`facebookincubator/tacquito`](https://github.com/facebookincubator/tacquito)
 - **Primary Language**: Go | **License**: MIT
 - **Overview**: A modern, high-throughput TACACS+ server and client library built in Go by Meta engineers, fully conforming to RFC 8907.
@@ -180,7 +180,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 10. [FreeRADIUS Client](https://github.com/FreeRADIUS/freeradius-client) [![GitHub stars](https://img.shields.io/github/stars/FreeRADIUS/freeradius-client?style=social&color=white)](https://github.com/FreeRADIUS/freeradius-client/stargazers)
+### 10. [FreeRADIUS Client](https://github.com/FreeRADIUS/freeradius-client) [![GitHub_Stars](https://img.shields.io/github/stars/FreeRADIUS/freeradius-client?style=social&color=white)](https://github.com/FreeRADIUS/freeradius-client/stargazers)
 - **Repository**: [`FreeRADIUS/freeradius-client`](https://github.com/FreeRADIUS/freeradius-client)
 - **Primary Language**: C | **License**: BSD-2-Clause
 - **Overview**: The official portable C library for building RADIUS client software (formerly known as `radiusclient-ng`).
@@ -192,7 +192,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 11. [radius-rs](https://github.com/moznion/radius-rs) [![GitHub stars](https://img.shields.io/github/stars/moznion/radius-rs?style=social&color=white)](https://github.com/moznion/radius-rs/stargazers)
+### 11. [radius-rs](https://github.com/moznion/radius-rs) [![GitHub_Stars](https://img.shields.io/github/stars/moznion/radius-rs?style=social&color=white)](https://github.com/moznion/radius-rs/stargazers)
 - **Repository**: [`moznion/radius-rs`](https://github.com/moznion/radius-rs)
 - **Primary Language**: Rust | **License**: MIT / Apache-2.0
 - **Overview**: Native asynchronous RADIUS server and client framework written in Rust using Tokio.
@@ -204,7 +204,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 12. [google-apps-radius](https://github.com/layeh/google-apps-radius) [![GitHub stars](https://img.shields.io/github/stars/layeh/google-apps-radius?style=social&color=white)](https://github.com/layeh/google-apps-radius/stargazers)
+### 12. [google-apps-radius](https://github.com/layeh/google-apps-radius) [![GitHub_Stars](https://img.shields.io/github/stars/layeh/google-apps-radius?style=social&color=white)](https://github.com/layeh/google-apps-radius/stargazers)
 - **Repository**: [`layeh/google-apps-radius`](https://github.com/layeh/google-apps-radius)
 - **Primary Language**: Go | **License**: MIT
 - **Overview**: Specialized RADIUS server that authenticates incoming user credentials directly against Google Workspace (formerly Google Apps / G Suite) domains.
@@ -216,7 +216,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 13. [eradius](https://github.com/travelping/eradius) [![GitHub stars](https://img.shields.io/github/stars/travelping/eradius?style=social&color=white)](https://github.com/travelping/eradius)
+### 13. [eradius](https://github.com/travelping/eradius) [![GitHub_Stars](https://img.shields.io/github/stars/travelping/eradius?style=social&color=white)](https://github.com/travelping/eradius)
 - **Repository**: [`travelping/eradius`](https://github.com/travelping/eradius)
 - **Primary Language**: Erlang | **License**: BSD-3-Clause
 - **Overview**: Highly resilient Erlang framework for developing carrier-class RADIUS applications, proxies, and accounting handlers.
@@ -228,7 +228,7 @@ Entries are **sorted descending by GitHub star count** ⭐.
 
 ---
 
-### 14. [Taranac](https://github.com/TaranacLabs/taranac) [![GitHub stars](https://img.shields.io/github/stars/TaranacLabs/taranac?style=social&color=white)](https://github.com/TaranacLabs/taranac/stargazers)
+### 14. [Taranac](https://github.com/TaranacLabs/taranac) [![GitHub_Stars](https://img.shields.io/github/stars/TaranacLabs/taranac?style=social&color=white)](https://github.com/TaranacLabs/taranac/stargazers)
 - **Repository**: [`TaranacLabs/taranac`](https://github.com/TaranacLabs/taranac)
 - **Primary Language**: Go / TypeScript | **License**: Apache-2.0
 - **Overview**: Next-generation unified open-source Network Access Control platform bringing TACACS+, RADIUS, and 802.1X into a single policy core.
@@ -279,7 +279,7 @@ Contributions to keep this ecosystem directory comprehensive, fresh, and accurat
 2. 🌿 **Create a new branch**: `git checkout -b add/new-radius-platform`.
 3. 📝 **Add your entry**: Ensure you follow the existing format:
    - For SaaS tools: Include specific starting tier pricing, explicit free trial days/limits, and company size.
-   - For Open-Source projects: Include star badges linked to stargazers and sorted in descending order.
+   - For Open-Source projects: Include Stars_Badges linked to stargazers and sorted in descending order.
 4. 🚀 **Commit your changes**: `git commit -m "Add New-Radius-Tool to open-source tools"`.
 5. 📬 **Submit a Pull Request** with a brief summary of why the tool belongs in this curated directory.
 
