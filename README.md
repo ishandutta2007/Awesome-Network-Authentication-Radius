@@ -1,76 +1,308 @@
-# Awesome-Network-Authentication-Radius
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Network Authentication &amp; RADIUS Banner" width="100%" />
+</p>
 
-## Top Network Authentication & RADIUS Tools Ecosystem
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-*Focused on 802.1X/EAP, NAC Policy Enforcement & Self-Hosted AAA*  
-**Last updated: March 2026**
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Network Authentication & RADIUS**. These tools provide the AAA (Authentication, Authorization, Accounting) layer for wired and wireless networks — validating user and device credentials, enforcing access policies, and logging sessions — typically speaking the RADIUS protocol to switches, access points, and VPN gateways.
-
-**Examples** include FreeRADIUS, ToughRADIUS, Radiator Policy Server, Cisco ISE, Aruba ClearPass, Portnox Cloud, JumpCloud Cloud RADIUS, and Foxpass (the category leaders).
-
-**Open-source emphasis**: This section is heavily expanded with every major active project for self-hosting, 802.1X/EAP support, and transparent policy logic — ideal for network engineers who want AAA infrastructure they control rather than per-device SaaS licensing.
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-## Table of Contents
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-- [Open-Source GitHub Projects](#open-source-github-projects)
-- [How to Contribute](#how-to-contribute)
-- [Disclaimer](#disclaimer)
-
-## SaaS/Hosted Platforms
-
-- **Cisco Identity Services Engine (ISE)** — **The enterprise NAC standard** with RADIUS, TACACS+, device profiling, posture assessment, BYOD onboarding, and guest access [citation:2][citation:13]. **Supports EAP-MD5, LEAP, PEAPv0/v1, EAP-TLS, and EAP-FAST** with certificate-based mutual authentication [citation:13]. **Trade-offs**: **expensive licensing** and complex deployment; typically requires dedicated appliance or VM infrastructure. **Best for large enterprises** already standardized on Cisco networking.
-
-- **Aruba ClearPass Policy Manager** — **Role- and device-based NAC** for multivendor wired, wireless, and VPN infrastructure [citation:3]. **Built-in context-based policy engine**, RADIUS, TACACS+, OnConnect enforcement, device profiling, posture, onboarding, and guest access [citation:3]. **Aruba Exchange Program** integrates with third-party security vendors for automated threat response [citation:3]. **Best for Aruba networking customers** and organizations needing granular role-based micro-segmentation.
-
-- **Portnox Cloud** — **Cloud RADIUS with optional local proxy** for on-premises resilience. **Two Azure server farms** (US and Netherlands) with N+2 redundancy [citation:4]. **Local RADIUS servers** act as proxies to the cloud, with a **7-day outage cache** of successful authentications for internet disruptions [citation:4]. **Supports RadSec (RADIUS over TLS)** and mTLS validation [citation:15]. **Best for organizations wanting cloud-managed RADIUS** without maintaining physical servers, especially those needing local failover.
-
-- **JumpCloud Cloud RADIUS** — **RADIUS-as-a-Service** with delegated authentication to established IdPs including Microsoft Entra ID [citation:5]. **Automatically generates shared secrets** for WAP-to-RADIUS authentication, supports **MFA for VPN/Wi-Fi login**, and **VLAN mapping** for access restriction [citation:5]. **Best for JumpCloud directory customers** wanting centralized Wi-Fi and VPN authentication.
-
-- **Foxpass** — **Cloud RADIUS and LDAP since 2015**, with **RadSec (RADIUS over TLS)** supported while less-secure protocols (PAP, PEAP over RADIUS/UDP) require explicit enabling [citation:8]. **99.95% availability** since founding [citation:8]. Integrates with Google Workspace, Azure/Entra ID, Okta, OneLogin, Active Directory, and LDAP [citation:8]. **Best for security-conscious organizations** wanting RadSec by default.
-
-- **SecureW2** — **Cloud RADIUS and PKI** for certificate-based Wi-Fi authentication. **Replaces on-premises RADIUS and certificate infrastructure** with cloud-native PKI, SCEP profile management, and integrations with Jamf, Kandji, Okta, and Splunk [citation:7]. **Best for organizations wanting certificate-based 802.1X** without managing internal PKI.
-
-- **Microsoft NPS** — **Windows Server role implementing RADIUS** for wireless, VPN, RD Gateway, and switch authentication [citation:10]. **Integrates with Active Directory** for SSO, supports RADIUS proxying and accounting to SQL Server or log files [citation:10]. **Cannot be installed on Server Core** [citation:10]. **Best for Windows-centric organizations** already running AD DS.
-
-## Open-Source GitHub Projects
-
-- **[FreeRADIUS](https://github.com/FreeRADIUS/freeradius-server)**  
-  **The most widely used RADIUS server in the world** — GPL-2.0 licensed. **Powers major ISPs and telcos**, is the technology behind **eduroam**, and is used by all cloud identity providers [citation:1]. **Authenticates one-third of all users on the Internet** [citation:1]. **Scales to tens of millions of users** — deployed in national ISPs with 15M+ users [citation:1]. **Multi-protocol policy server** implementing RADIUS, DHCP, BFD, and ARP, with a **BSD-licensed RADIUS client library**, PAM library, and Apache module [citation:1]. **Infinitely flexible policy language**, AD integration, and support for Vendor-Specific Attributes including USR non-standard ones [citation:1][citation:12]. **Runs on all Unix-like platforms** with full IPv6 support [citation:12]. **Commercial support available via InkBridge Networks** [citation:1]. **Best for any organization needing a proven, scalable, self-hosted RADIUS server** — the reference implementation the entire industry builds on.
-
-- **[ToughRADIUS](https://github.com/talkincode/toughradius)**  
-  **The modern Go-based RADIUS server for ISPs and enterprises** — **supports standard RADIUS, RadSec (TLS over TCP), and a full EAP/802.1X suite** including EAP-MD5, EAP-MSCHAPv2, EAP-TLS, PEAPv0/EAP-MSCHAPv2, and EAP-TTLS [citation:11]. **React Admin web interface** for user management, online session monitoring, and log auditing [citation:11]. **Multi-vendor VSA support** for Cisco, Mikrotik, Huawei, H3C [citation:11]. **PostgreSQL or SQLite** backends. **Built with Go for high concurrency** [citation:11]. **Compatibility note**: PEAP and EAP-MSCHAPv2 are compatibility-first methods — prefer EAP-TLS for new deployments [citation:11]. **Best for ISPs and enterprises wanting a modern, web-managed RADIUS server** with broad EAP support.
-
-- **[Radiator Policy Server](https://github.com/radiatorsoftware/radiator-server)**  
-  **The Rust-based next-generation standalone RADIUS server** — **achieves concurrency, high performance, and security** with a **monitoring and management dashboard** and **REST API** for upstream/downstream integration [citation:9]. **Up to latest standards** with a variety of integration options. **Docker image available** (29.2 MB) [citation:9]. **Best for teams wanting a modern, performant RADIUS server** with API-driven management.
-
-### Additional Strong Open-Source Options
-
-- **daloradius** — Web-based RADIUS management interface for FreeRADIUS. Provides user management, accounting reports, and billing integration for ISPs and hotspot operators.
-- **RadiusDesk** — RADIUS management platform with a focus on hotspot and mesh networking deployments.
-- **PacketFence** — Open-source NAC solution with RADIUS support, captive portal, and device registration.
-
-**Frameworks for building custom systems**: Combine **FreeRADIUS** for the most battle-tested AAA engine with infinitely flexible policy language, **ToughRADIUS** for a modern web-managed server with broad EAP support, and **Radiator Policy Server** for API-driven management with Rust performance — to build a RADIUS infrastructure tailored to your scale, management preferences, and EAP requirements.
-
-## How to Contribute
-
-1. Fork the repo.
-2. Add/edit entries in `README.md` (follow existing format).
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-4. Submit PR with a short explanation.
-
-Star the repo if you find it useful!
-
-## Disclaimer
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-- Network authentication tools differ significantly in deployment model, EAP method support, and management interface. **FreeRADIUS authenticates one-third of all Internet users** and is the de facto open-source standard, but requires manual configuration and lacks a built-in UI [citation:1]. **ToughRADIUS adds a React Admin web interface and broad EAP support** including EAP-TLS, PEAP, and EAP-TTLS [citation:11]. **Radiator Policy Server brings Rust performance and REST API management** [citation:9]. **Cisco ISE and Aruba ClearPass are enterprise NAC platforms** with deep policy engines and vendor integrations, at significantly higher cost and complexity [citation:3][citation:13]. **Portnox and JumpCloud are cloud-managed RADIUS** — Portnox offers local proxy with outage cache [citation:4], JumpCloud offers delegated authentication to Entra ID [citation:5]. **Foxpass enforces RadSec by default** and requires explicit enabling of less-secure protocols [citation:8]. **PEAP and EAP-MSCHAPv2 carry NTLMv1-like attack surface** — prefer EAP-TLS where you control client certificates [citation:11].
-- Self-hosted open-source solutions require proper certificate management for EAP-TLS, database backups for user credentials, and careful firewall rules for RADIUS ports (1812/1813) and RadSec (2083).
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square&logo=github" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square&logo=github" alt="GitHub Forks"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square" alt="License"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/issues"><img src="https://img.shields.io/github/issues/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square" alt="Open Issues"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/pulls"><img src="https://img.shields.io/github/issues-pr/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square" alt="Pull Requests"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Network-Authentication-Radius/commits/main"><img src="https://img.shields.io/github/last-commit/ishandutta2007/Awesome-Network-Authentication-Radius?style=flat-square" alt="Last Commit"/></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
 
 ---
 
-**Made for network engineers, sysadmins, and organizations building RADIUS and 802.1X authentication infrastructure they can own and control.**
-Let's make network authentication more open, standards-compliant, and self-hostable.
+# 🛡️ Awesome Network Authentication & RADIUS Ecosystem 🌐
+
+> A curated directory of production-grade **AAA (Authentication, Authorization, and Accounting)** platforms, **802.1X / EAP** engines, **Network Access Control (NAC)** solutions, and **Cloud RADIUS / RadSec** services.
+
+Whether you are configuring enterprise Wi-Fi (WPA2/WPA3-Enterprise), authenticating VPN tunnels, enforcing device micro-segmentation, securing dynamic VLAN assignment, or building carrier-grade ISP subscriber accounting, this directory lists both enterprise-grade SaaS platforms and open-source software.
+
+---
+
+## 📑 Table of Contents
+
+- [📊 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [☁️ SaaS & Hosted Network Authentication Platforms](#️-saas--hosted-network-authentication-platforms)
+- [💻 Open-Source GitHub Projects](#-open-source-github-projects)
+- [🔐 Core Protocols & Authentication Standards](#-core-protocols--authentication-standards)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [📈 Star History](#-star-history)
+- [💖 Support & Sponsoring](#-support--sponsoring)
+- [📜 Disclaimer & License](#-disclaimer--license)
+
+---
+
+## 📊 Sector Overview & Market Dynamics
+
+The global **Network Access Control (NAC) and AAA/RADIUS Authentication** market was valued at **$3.24 billion in 2024** and is projected to expand to **$7.86 billion by 2030**, reflecting a Compound Annual Growth Rate (**CAGR of 15.9%**). Growth is catalyzed by zero-trust architecture mandates, rapid adoption of 802.1X certificate-based (EAP-TLS) passwordless authentication, IoT device explosion on corporate LANs, and hybrid workforces requiring dynamic access control.
+
+In terms of industry concentration, the market is **moderately concentrated with a bifurcated dynamic**:
+- **Legacy Enterprise Core (Concentrated Oligopoly)**: Traditional on-premise campus networking is dominated by a few multi-billion dollar incumbents—most notably **Microsoft (NPS)**, **Cisco (ISE)**, and **HPE Aruba (ClearPass)**—who command high switching costs and deep proprietary networking integration.
+- **Cloud-Native & Open-Source Edge (Fragmented Challenger Wave)**: Rapid fragmentation is taking place in the cloud-native RADIUS and identity-provider integration layer. Specialized SaaS players like **JumpCloud**, **Portnox**, **Foxpass**, and **SecureW2** are disaggregating legacy appliances with zero-infrastructure models, while **FreeRADIUS** and **PacketFence** underpin over 35% of the world's carrier, university (eduroam), and ISP AAA backbones.
+
+---
+
+## ☁️ SaaS & Hosted Network Authentication Platforms
+
+The following SaaS and commercial enterprise platforms provide hosted or hybrid AAA, Cloud RADIUS (RFC 2865 / RFC 6614 RadSec), and Network Access Control. Entries are **sorted descending by company size (market valuation / annual revenue)**.
+
+| 🏢 Platform | 💰 Company Size (Valuation / Revenue) | 🏷️ Starting Tier Pricing | 🎁 Free Tier / Trial Limits | 🔑 Protocols & Key Features | 🎯 Best Fit & Use Cases |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **[Microsoft NPS (Network Policy Server)](https://learn.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-top)** | **$3.12 Trillion** Market Cap<br>*(FY24 Revenue: $245.1B)* | **$501.00** one-time (Windows Server Essentials, up to 25 users / 50 devices) or **$1,069.00** (Standard 16-core) + **$44.00/user** CAL | **180-day free evaluation trial**<br>*(Full Windows Server evaluation image with 100% unrestricted RADIUS & NPS features)* | RADIUS (RFC 2865/2866), Active Directory Domain Services (AD DS) SSO, 802.1X PEAP-MSCHAPv2, EAP-TLS, NPS Proxy | Windows-centric on-premises enterprise environments running Active Directory Domain Services. |
+| **[Cisco Identity Services Engine (ISE)](https://www.cisco.com/site/us/en/products/security/identity-services-engine/index.html)** | **$230.5 Billion** Market Cap<br>*(FY24 Revenue: $53.8B)* | **$4.50 per endpoint/year** (ISE Essentials tier, min. 100 endpoints = **$450.00/year**; Base VM license starts at **$2,500.00**) | **90-day free trial**<br>*(Full evaluation license for up to 100 concurrent endpoints on Cisco dCloud or virtual appliance)* | Enterprise NAC, RADIUS, TACACS+, TrustSec SGT micro-segmentation, 802.1X (EAP-TLS, PEAPv0/v1, EAP-FAST), Posture check | Large enterprises, hospitals, and financial institutions standardized on Cisco switching, routing, and Meraki Wi-Fi. |
+| **[Aruba ClearPass Policy Manager](https://www.arubanetworks.com/products/security/network-access-control/)** | **$27.8 Billion** Market Cap *(HPE)<br>*(FY24 Revenue: $29.1B)* | **$3.50 per endpoint/year** (ClearPass Entry subscription) or **$28.00 per endpoint perpetual** (NL license; base VM at **$2,100.00**) | **90-day free trial**<br>*(Virtual appliance evaluation image supporting up to 500 concurrent devices with full policy features)* | Multi-vendor NAC, RADIUS, TACACS+, OnConnect enforcement, dynamic role-based micro-segmentation, automated threat isolation | Multi-vendor campus networks requiring granular context-based policy mapping and automated threat quarantine. |
+| **[JumpCloud Cloud RADIUS](https://jumpCloud.com/platform/cloud-radius)** | **$2.60 Billion** Valuation<br>*(Annual Recurring Revenue: ~$120M)* | **$9.00 per user/month** (JumpCloud Core package, includes Cloud RADIUS, Cloud Directory, SSO, and MFA; billed annually) | **30-day full-featured free trial**<br>*(Full platform access with unlimited RADIUS authentications; legacy accounts hold free 10 users/10 devices)* | Cloud RADIUS-as-a-Service, automated shared secrets, delegated Entra ID / Google sync, dynamic VLAN tagging, Wi-Fi MFA | Cloud-first companies and hybrid teams wanting directory-backed 802.1X Wi-Fi/VPN authentication without hardware. |
+| **[Splashtop Foxpass](https://www.foxpass.com/)** | **$1.00 Billion** Valuation *(Splashtop)<br>*(Annual Revenue: ~$75M+)* | **$2.00 per user/month** (Standard Cloud RADIUS & LDAP tier, billed annually; or **$150.00/month** base team tier) | **30-day free trial**<br>*(Up to 10 users with full Cloud RADIUS, RadSec, LDAP, and Google Workspace / Okta sync; no credit card)* | RadSec (RFC 6614 RADIUS over TLS) enforced by default, Delegated Cloud LDAP/RADIUS, Google Workspace/Okta/Azure AD sync | Security-conscious tech startups, DevOps teams, and companies requiring RadSec-by-default with fast API integration. |
+| **[Portnox Cloud](https://www.portnox.com/)** | **~$100 Million** Valuation<br>*(Series A: $22M; Revenue: ~$15M)* | **£0.81 (~$1.05) per device/month** (UK G-Cloud framework) / **$2.00 per device/month** (Base tier, min. 100 devices = **$2,400.00/year**) | **30-day free trial**<br>*(Up to 100 endpoints with complete Cloud RADIUS, RadSec proxy, TACACS+, and local 7-day outage cache)* | 100% Cloud-native RADIUS & TACACS+, RadSec over mTLS, local edge caching proxy with 7-day outage survivability, ZTNA | Mid-market enterprises seeking zero-maintenance cloud RADIUS with resilience against local internet outages. |
+| **[SecureW2 JoinNow](https://www.securew2.com/)** | **~$50 Million** Valuation<br>*(Bootstrapped; Revenue: ~$20M)* | **$5.00 per device/year** (Billed annually, minimum 100 devices = **$3,000.00/year** base contract minimum) | **30-day guided PoC sandbox trial**<br>*(Full PKI & Cloud RADIUS sandbox coordinated via engineer-assisted onboarding for up to 50 test devices)* | Cloud RADIUS with Managed Cloud PKI, automated SCEP / ACME certificate enrollment, passwordless 802.1X EAP-TLS onboarding | Organizations eliminating password-based Wi-Fi via automated certificate enrollment with Intune, Jamf, and MDM systems. |
+| **[IronWiFi](https://www.ironwifi.com/)** | **~$15 Million** Valuation<br>*(Bootstrapped; Revenue: ~$4.5M)* | **$45.00 per month** (Bronze Plan: up to 100 concurrent devices, 1,000 guest accounts, and 1 RADIUS server location) | **14-day free trial**<br>*(Up to 5 concurrent devices and 100 guest accounts with standard RADIUS and captive portal support)* | Hosted RADIUS, guest Wi-Fi captive portals, SMS/social login verification, multi-region failover, Stripe payment billing | Hospitality, retail chains, coworking spaces, and SMBs requiring combined 802.1X and guest captive portal authentication. |
+
+---
+
+## 💻 Open-Source GitHub Projects
+
+These open-source projects provide production-ready RADIUS daemons, TACACS+ access controllers, web administration interfaces, and protocol libraries. 
+
+Entries are **sorted descending by GitHub star count** ⭐.
+
+---
+
+### 1. [FreeRADIUS](https://github.com/FreeRADIUS/freeradius-server) [![GitHub stars](https://img.shields.io/github/stars/FreeRADIUS/freeradius-server?style=social&color=white)](https://github.com/FreeRADIUS/freeradius-server/stargazers)
+- **Repository**: [`FreeRADIUS/freeradius-server`](https://github.com/FreeRADIUS/freeradius-server)
+- **Primary Language**: C | **License**: GPL-2.0
+- **Overview**: The undisputed reference implementation of RADIUS and the most widely deployed AAA server on Earth. Authenticates approximately one-third of all global internet traffic, forms the core backbone of the **eduroam** global roaming network, and scales to tens of millions of concurrent subscribers in national tier-1 telecom and ISP architectures.
+- **Key Features**:
+  - Multi-protocol policy engine implementing RADIUS (RFC 2865/2866), RadSec (RFC 6614), DHCP, BFD, and ARP.
+  - Complete EAP suite: EAP-TLS, EAP-TTLS, PEAP, EAP-MSCHAPv2, EAP-SIM, and EAP-AKA.
+  - Pluggable backends: PostgreSQL, MySQL, OpenLDAP, Active Directory, Redis, SQLite, REST API (`rlm_rest`), and Perl/Python script hooks.
+  - Highly expressive, Turing-complete policy configuration language (`unlang`).
+
+---
+
+### 2. [PacketFence](https://github.com/inverse-inc/packetfence) [![GitHub stars](https://img.shields.io/github/stars/inverse-inc/packetfence?style=social&color=white)](https://github.com/inverse-inc/packetfence/stargazers)
+- **Repository**: [`inverse-inc/packetfence`](https://github.com/inverse-inc/packetfence)
+- **Primary Language**: Perl / JavaScript | **License**: GPL-2.0
+- **Overview**: Enterprise-grade Free and Open Source Network Access Control (NAC) system trusted worldwide. Delivers comprehensive network security enforcement for heterogeneous wired and wireless multivendor infrastructure.
+- **Key Features**:
+  - Built-in RADIUS server and captive portal engine for guest onboarding and self-registration.
+  - Dynamic VLAN assignment, role-based micro-segmentation, and 802.1X EAP authentication.
+  - Comprehensive BYOD workflows with automated MDM integration (Intune, Jamf).
+  - Layer-2 isolation (inline, VLAN steering, and SNMP/CoA disconnection) for compromised devices.
+
+---
+
+### 3. [daloRADIUS](https://github.com/lirantal/daloradius) [![GitHub stars](https://img.shields.io/github/stars/lirantal/daloradius?style=social&color=white)](https://github.com/lirantal/daloradius/stargazers)
+- **Repository**: [`lirantal/daloradius`](https://github.com/lirantal/daloradius)
+- **Primary Language**: PHP / JavaScript | **License**: GPL-2.0
+- **Overview**: Popular web administration platform designed specifically for managing FreeRADIUS instances, internet service provider deployments, and Wi-Fi hotspot operators.
+- **Key Features**:
+  - Intuitive web GUI for subscriber provisioning, password resets, and user group management.
+  - Rich accounting, session monitoring, bandwidth tracking, and data quota enforcement.
+  - Integrated billing engine supporting pre-paid vouchers, PayPal, invoices, and rate plans.
+  - Visual GIS mapping integration via OpenStreetMap to locate network access points and hotspots.
+
+---
+
+### 4. [ToughRADIUS](https://github.com/talkincode/toughradius) [![GitHub stars](https://img.shields.io/github/stars/talkincode/toughradius?style=social&color=white)](https://github.com/talkincode/toughradius/stargazers)
+- **Repository**: [`talkincode/toughradius`](https://github.com/talkincode/toughradius)
+- **Primary Language**: Go / TypeScript | **License**: Apache-2.0
+- **Overview**: High-performance, modern RADIUS server engineered in Golang for ISPs, enterprise intranets, and carriers. Features a built-in React Admin web management console and native Docker deployment.
+- **Key Features**:
+  - Full support for RFC 2865 standard RADIUS, RadSec (TLS over TCP), and 802.1X protocols.
+  - Comprehensive EAP authentication: EAP-MD5, EAP-MSCHAPv2, EAP-TLS, PEAPv0, and EAP-TTLS.
+  - Native multi-vendor Vendor-Specific Attributes (VSA) for MikroTik, Cisco, Huawei, and H3C.
+  - PostgreSQL and SQLite database backends with real-time session tracking and CoA disconnect.
+
+---
+
+### 5. [OpenWISP RADIUS](https://github.com/openwisp/openwisp-radius) [![GitHub stars](https://img.shields.io/github/stars/openwisp/openwisp-radius?style=social&color=white)](https://github.com/openwisp/openwisp-radius/stargazers)
+- **Repository**: [`openwisp/openwisp-radius`](https://github.com/openwisp/openwisp-radius)
+- **Primary Language**: Python | **License**: GPL-3.0
+- **Overview**: Modular Django application providing a centralized administration web UI and RESTful API for FreeRADIUS 3. Designed for public Wi-Fi networks, university campuses, and municipal hotspot networks.
+- **Key Features**:
+  - REST API interface interfacing directly with FreeRADIUS via `rlm_rest`.
+  - Captive portal user management, self-registration via SMS/email tokens, and social login OAuth integration.
+  - WPA-Enterprise 802.1X user credential handling and Hotspot 2.0 (Passpoint / 802.11u) profile management.
+  - Batch user importing, usage accounting limits, and organizational multi-tenancy.
+
+---
+
+### 6. [pyrad](https://github.com/pyradius/pyrad) [![GitHub stars](https://img.shields.io/github/stars/pyradius/pyrad?style=social&color=white)](https://github.com/pyradius/pyrad/stargazers)
+- **Repository**: [`pyradius/pyrad`](https://github.com/pyradius/pyrad)
+- **Primary Language**: Python | **License**: BSD-3-Clause
+- **Overview**: The standard Python library implementing RADIUS client and server capabilities in pure Python (RFC 2865 and RFC 2866). Widely used for automated testing, custom proxy daemons, and microservices.
+- **Key Features**:
+  - Fully implements RADIUS packet decoding, encoding, signing, and verification.
+  - Supports custom and standard RADIUS dictionary files.
+  - Native packet handling for Access-Request, Access-Accept, Access-Reject, and Accounting-Request packets.
+  - Lightweight and dependency-free, making it ideal for integration into Python web applications and automated QA pipelines.
+
+---
+
+### 7. [Keycloak RADIUS Plugin](https://github.com/vzakharchenko/keycloak-radius-plugin) [![GitHub stars](https://img.shields.io/github/stars/vzakharchenko/keycloak-radius-plugin?style=social&color=white)](https://github.com/vzakharchenko/keycloak-radius-plugin/stargazers)
+- **Repository**: [`vzakharchenko/keycloak-radius-plugin`](https://github.com/vzakharchenko/keycloak-radius-plugin)
+- **Primary Language**: Java | **License**: Apache-2.0
+- **Overview**: Seamlessly embeds a native RADIUS server inside Red Hat Keycloak, allowing network access devices (firewalls, VPN gateways, Wi-Fi controllers) to authenticate against Keycloak's IAM core.
+- **Key Features**:
+  - Bridges RADIUS authentication directly to Keycloak user realms and federated identity pools.
+  - Supports OTP / TOTP multi-factor authentication (MFA) over RADIUS for Cisco, Fortinet, and Palo Alto VPNs.
+  - Supports PAP, CHAP, MS-CHAPv2, and Mikrotik dictionary attributes.
+  - Enables unified Single Sign-On (SSO) governance across web apps and corporate network infrastructure.
+
+---
+
+### 8. [tac_plus](https://github.com/facebook/tac_plus) [![GitHub stars](https://img.shields.io/github/stars/facebook/tac_plus?style=social&color=white)](https://github.com/facebook/tac_plus/stargazers)
+- **Repository**: [`facebook/tac_plus`](https://github.com/facebook/tac_plus)
+- **Primary Language**: C | **License**: BSD-3-Clause
+- **Overview**: Facebook / Meta's hardened TACACS+ daemon designed for enterprise network device administration, automated configuration auditing, and command-level authorization.
+- **Key Features**:
+  - Strict separation of Authentication, Authorization, and Accounting for network equipment (Cisco, Arista, Juniper).
+  - Robust IPv4 and IPv6 support tested across hyperscale datacenter fabrics.
+  - Granular per-command authorization rules enforcing least-privilege network operations.
+  - Centralized accounting logs recording exact CLI commands executed by network engineers.
+
+---
+
+### 9. [Tacquito](https://github.com/facebookincubator/tacquito) [![GitHub stars](https://img.shields.io/github/stars/facebookincubator/tacquito?style=social&color=white)](https://github.com/facebookincubator/tacquito/stargazers)
+- **Repository**: [`facebookincubator/tacquito`](https://github.com/facebookincubator/tacquito)
+- **Primary Language**: Go | **License**: MIT
+- **Overview**: A modern, high-throughput TACACS+ server and client library built in Go by Meta engineers, fully conforming to RFC 8907.
+- **Key Features**:
+  - Native RFC 8907 compliance with full support for TACACS+ single-connect mode.
+  - High concurrency designed to handle bursts of concurrent router/switch configuration sessions.
+  - Pluggable backend architecture allowing custom authn/authz logic against modern corporate identity providers.
+  - Clean modular Go codebase suitable for embedding in custom network telemetry agents.
+
+---
+
+### 10. [FreeRADIUS Client](https://github.com/FreeRADIUS/freeradius-client) [![GitHub stars](https://img.shields.io/github/stars/FreeRADIUS/freeradius-client?style=social&color=white)](https://github.com/FreeRADIUS/freeradius-client/stargazers)
+- **Repository**: [`FreeRADIUS/freeradius-client`](https://github.com/FreeRADIUS/freeradius-client)
+- **Primary Language**: C | **License**: BSD-2-Clause
+- **Overview**: The official portable C library for building RADIUS client software (formerly known as `radiusclient-ng`).
+- **Key Features**:
+  - Provides a clean C API for authenticating users and submitting accounting records to remote RADIUS servers.
+  - Ships with `radlogin` and `radstatus` utilities for CLI querying and network diagnostics.
+  - Supports standard RADIUS RFCs, vendor attribute parsing, and IP routing table integration.
+  - BSD licensed, allowing seamless linkage into commercial and open-source applications alike.
+
+---
+
+### 11. [radius-rs](https://github.com/moznion/radius-rs) [![GitHub stars](https://img.shields.io/github/stars/moznion/radius-rs?style=social&color=white)](https://github.com/moznion/radius-rs/stargazers)
+- **Repository**: [`moznion/radius-rs`](https://github.com/moznion/radius-rs)
+- **Primary Language**: Rust | **License**: MIT / Apache-2.0
+- **Overview**: Native asynchronous RADIUS server and client framework written in Rust using Tokio.
+- **Key Features**:
+  - Memory-safe, zero-cost abstraction RADIUS protocol parser and serializer.
+  - Fully asynchronous request handling powered by Tokio UDP networking.
+  - Comprehensive support for standard attribute dictionary generation and custom VSA encoding.
+  - Excellent foundation for developing lightweight, containerized micro-RADIUS proxies.
+
+---
+
+### 12. [google-apps-radius](https://github.com/layeh/google-apps-radius) [![GitHub stars](https://img.shields.io/github/stars/layeh/google-apps-radius?style=social&color=white)](https://github.com/layeh/google-apps-radius/stargazers)
+- **Repository**: [`layeh/google-apps-radius`](https://github.com/layeh/google-apps-radius)
+- **Primary Language**: Go | **License**: MIT
+- **Overview**: Specialized RADIUS server that authenticates incoming user credentials directly against Google Workspace (formerly Google Apps / G Suite) domains.
+- **Key Features**:
+  - Bridges legacy RADIUS network gear (access points, VPN concentrators) to Google Workspace identity.
+  - Directly authenticates credentials via Google APIs or Google Secure LDAP service.
+  - Single binary deployment with minimal memory footprint and zero external database dependency.
+  - Ideal for small businesses and co-working offices relying entirely on Google Workspace accounts.
+
+---
+
+### 13. [eradius](https://github.com/travelping/eradius) [![GitHub stars](https://img.shields.io/github/stars/travelping/eradius?style=social&color=white)](https://github.com/travelping/eradius)
+- **Repository**: [`travelping/eradius`](https://github.com/travelping/eradius)
+- **Primary Language**: Erlang | **License**: BSD-3-Clause
+- **Overview**: Highly resilient Erlang framework for developing carrier-class RADIUS applications, proxies, and accounting handlers.
+- **Key Features**:
+  - Built on OTP actor principles for fault-tolerant, high-throughput packet processing.
+  - Hot code reloading and dynamic dictionary compilation without daemon downtime.
+  - Extensively deployed in telecommunication core networks, GPRS/LTE data gateways, and SS7/Diameter bridges.
+  - Native support for RADIUS proxying, load balancing, and packet manipulation pipelines.
+
+---
+
+### 14. [Taranac](https://github.com/TaranacLabs/taranac) [![GitHub stars](https://img.shields.io/github/stars/TaranacLabs/taranac?style=social&color=white)](https://github.com/TaranacLabs/taranac/stargazers)
+- **Repository**: [`TaranacLabs/taranac`](https://github.com/TaranacLabs/taranac)
+- **Primary Language**: Go / TypeScript | **License**: Apache-2.0
+- **Overview**: Next-generation unified open-source Network Access Control platform bringing TACACS+, RADIUS, and 802.1X into a single policy core.
+- **Key Features**:
+  - Unified administration console for both device administration (TACACS+) and end-user access (RADIUS).
+  - Modern Web UI with real-time audit event logging and session visualization.
+  - Built for cloud-native deployment with Kubernetes helm charts and container images.
+  - Granular role-based authorization engine with multi-tenant domain partitioning.
+
+---
+
+## 🔐 Core Protocols & Authentication Standards
+
+Understanding the differences between AAA protocols is critical for choosing the right infrastructure:
+
+```
++---------------------------------------------------------------------------------------------------+
+|                                 ENTERPRISE AAA PROTOCOL STACK                                      |
++---------------------------------------------------------------------------------------------------+
+|  [ Endpoints / Clients ]   ---> (EAP-TLS / PEAP / 802.1X)  --->  [ Authenticator (Switch / AP) ]  |
+|  [ Authenticator ]        ---> (RADIUS / RadSec / TACACS+) --->  [ AAA Server (FreeRADIUS / ISE) ]|
+|  [ AAA Server ]           ---> (LDAP / SAML / OIDC / PKI)  --->  [ Identity Provider / CA ]       |
++---------------------------------------------------------------------------------------------------+
+```
+
+### 1. Protocol Comparison Matrix
+
+| Protocol | Transport | Port | RFC | Security Highlights | Primary Use Case |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **RADIUS** | UDP | 1812 (Auth), 1813 (Acct) | RFC 2865, 2866 | MD5 shared secret hash (vulnerable to offline brute force) | Network access, Wi-Fi 802.1X, VPN login |
+| **RadSec** | TCP / TLS | 2083 | RFC 6614 | Full mutual TLS (mTLS) encryption, reliable TCP delivery | Cloud RADIUS, cross-WAN roaming (eduroam) |
+| **TACACS+**| TCP | 49 | RFC 8907 | Entire packet encrypted, separate AuthN / AuthZ / Acct | Router / switch CLI admin access |
+| **Diameter**| TCP / SCTP | 3868 | RFC 6733 | Native failover, peer discovery, 32-bit AVPs | 4G/5G mobile packet cores, IMS |
+
+### 2. Common 802.1X EAP Authentication Methods
+
+- **EAP-TLS (RFC 5216)**: **Gold Standard.** Mutual certificate authentication. The client validates the server's TLS certificate, and the server validates the client's certificate. Eliminates passwords completely and prevents credential harvesting.
+- **PEAPv0 / EAP-MSCHAPv2**: Common enterprise legacy method. The server presents a certificate, creating an encrypted tunnel through which username/password are sent. Susceptible to rogue AP attacks if client trust settings are misconfigured.
+- **EAP-TTLS (RFC 5281)**: Similar to PEAP, but can tunnel non-MSCHAP authentication protocols (such as PAP or inner EAP methods) inside a secure TLS tunnel.
+
+---
+
+## 🤝 How to Contribute
+
+Contributions to keep this ecosystem directory comprehensive, fresh, and accurate are welcome!
+
+1. 🍴 **Fork the repository** on GitHub.
+2. 🌿 **Create a new branch**: `git checkout -b add/new-radius-platform`.
+3. 📝 **Add your entry**: Ensure you follow the existing format:
+   - For SaaS tools: Include specific starting tier pricing, explicit free trial days/limits, and company size.
+   - For Open-Source projects: Include star badges linked to stargazers and sorted in descending order.
+4. 🚀 **Commit your changes**: `git commit -m "Add New-Radius-Tool to open-source tools"`.
+5. 📬 **Submit a Pull Request** with a brief summary of why the tool belongs in this curated directory.
+
+---
+
+## 📈 Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Network-Authentication-Radius&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Network-Authentication-Radius&type=date&legend=top-left)
+
+---
+
+## 💖 Support & Sponsoring
+
+Thank you for visiting and supporting this curated resource! If this repository assisted you in architecting, auditing, or deploying network authentication infrastructure:
+
+- ⭐ **Star this repository** to improve visibility for network engineers and sysadmins worldwide.
+- 🍴 **Fork and share** with colleagues in network operations, cybersecurity, and DevOps.
+- 💬 **Join our Discord** at [discord.gg/jc4xtF58Ve](https://discord.gg/jc4xtF58Ve) to discuss network architecture and authentication.
+- ☕ **Support the maintainer**: You can sponsor ongoing open-source curation and tool evaluation via the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+---
+
+## 📜 Disclaimer & License
+
+- **Disclaimer**: This repository is a community-curated directory compiled for educational and architectural evaluation purposes. Brand names, logos, and trademarks belong to their respective owners. Mention of SaaS or commercial offerings does not constitute an endorsement.
+- **License**: Released under the [MIT License](LICENSE).
